@@ -1,0 +1,136 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: UserRepositoryImpl</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.repository</a> ]
+</div>
+
+<h1>Coverage Summary for Class: UserRepositoryImpl (com.repository)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">UserRepositoryImpl</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    40%
+  </span>
+  <span class="absValue">
+    (2/ 5)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.repository;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;import java.util.ArrayList;
+<i>6</i>&nbsp;import java.util.List;
+<i>7</i>&nbsp;import java.util.Random;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;import javax.persistence.EntityManager;
+<i>10</i>&nbsp;import javax.persistence.PersistenceContext;
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;
+<i>13</i>&nbsp;/**
+<i>14</i>&nbsp; * Implementation fo the custom repository functionality declared in {@link UserRepositoryCustom} based on JPA. To use
+<i>15</i>&nbsp; * this implementation in combination with Spring Data JPA you can either register it programatically:
+<i>16</i>&nbsp; * &lt;p/&gt;
+<i>17</i>&nbsp; * &lt;pre&gt;
+<i>18</i>&nbsp; * EntityManager em = ... // Obtain EntityManager
+<i>19</i>&nbsp; *
+<i>20</i>&nbsp; * UserRepositoryCustom custom = new UserRepositoryImpl();
+<i>21</i>&nbsp; * custom.setEntityManager(em);
+<i>22</i>&nbsp; *
+<i>23</i>&nbsp; * RepositoryFactorySupport factory = new JpaRepositoryFactory(em);
+<i>24</i>&nbsp; * UserRepository repository = factory.getRepository(UserRepository.class, custom);
+<i>25</i>&nbsp; * &lt;/pre&gt;
+<i>26</i>&nbsp; * &lt;p/&gt;
+<i>27</i>&nbsp; * Using the Spring namespace the implementation will just get picked up due to the classpath scanning for
+<i>28</i>&nbsp; * implementations with the {@code Impl} postfix.
+<i>29</i>&nbsp; * &lt;p/&gt;
+<i>30</i>&nbsp; * &lt;pre&gt;
+<i>31</i>&nbsp; * &amp;lt;jpa:repositories base-package=&amp;quot;com.acme.repository&amp;quot; /&amp;gt;
+<i>32</i>&nbsp; * &lt;/pre&gt;
+<i>33</i>&nbsp; * &lt;p/&gt;
+<i>34</i>&nbsp; * If you need to manually configure the custom instance see {@link UserRepositoryJdbcImpl} for an example.
+<i>35</i>&nbsp; *
+<i>36</i>&nbsp; * @author Oliver Gierke
+<i>37</i>&nbsp; */
+<i>38</i>&nbsp;class UserRepositoryImpl implements UserRepositoryCustom {
+<i>39</i>&nbsp;    /*
+<i>40</i>&nbsp;     * (non-Javadoc)
+<i>41</i>&nbsp;     * @see org.springframework.data.jpa.example.repository.UserRepositoryCustom#myCustomBatchOperation()
+<i>42</i>&nbsp;     */
+<i>43</i>&nbsp;    public List&lt;User&gt; myCustomBatchOperation() {
+<b class="fc"><i>44</i>&nbsp;        if(new Random().nextBoolean()){</b>
+<b class="nc"><i>45</i>&nbsp;            System.out.println(&quot;111&quot;);</b>
+<b class="nc"><i>46</i>&nbsp;            return new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>47</i>&nbsp;        } {</b>
+<b class="fc"><i>48</i>&nbsp;            System.out.println(&quot;22&quot;);</b>
+<i>49</i>&nbsp;            return new ArrayList&lt;&gt;();
+<i>50</i>&nbsp;        }
+<i>51</i>&nbsp;
+<i>52</i>&nbsp;    }
+<i>53</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2013-02-11 16:53</div>
+</div>
+</body>
+</html>

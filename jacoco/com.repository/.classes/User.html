@@ -1,0 +1,164 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: User</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.repository</a> ]
+</div>
+
+<h1>Coverage Summary for Class: User (com.repository)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">User</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    80%
+  </span>
+  <span class="absValue">
+    (4/ 5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    83.3%
+  </span>
+  <span class="absValue">
+    (5/ 6)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.repository;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import javax.persistence.Column;
+<i>4</i>&nbsp;import javax.persistence.Entity;
+<i>5</i>&nbsp;import javax.persistence.NamedQuery;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;import org.springframework.data.jpa.domain.AbstractPersistable;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;/**
+<i>10</i>&nbsp; * Sample user class.
+<i>11</i>&nbsp; *
+<i>12</i>&nbsp; * @author Oliver Gierke
+<i>13</i>&nbsp; */
+<i>14</i>&nbsp;@Entity
+<i>15</i>&nbsp;@NamedQuery(name = &quot;User.findByTheUsersName&quot;, query = &quot;from User u where u.username = ?1&quot;)
+<i>16</i>&nbsp;public class User extends AbstractPersistable&lt;Long&gt; {
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;    private static final long serialVersionUID = -2952735933715107252L;
+<i>19</i>&nbsp;
+<i>20</i>&nbsp;    @Column(unique = true)
+<i>21</i>&nbsp;    private String username;
+<i>22</i>&nbsp;
+<i>23</i>&nbsp;    private String firstname;
+<i>24</i>&nbsp;    private String lastname;
+<i>25</i>&nbsp;
+<i>26</i>&nbsp;    public User() {
+<b class="fc"><i>27</i>&nbsp;        this(null);</b>
+<i>28</i>&nbsp;    }
+<i>29</i>&nbsp;
+<i>30</i>&nbsp;    /**
+<i>31</i>&nbsp;     * Creates a new user instance.
+<i>32</i>&nbsp;     */
+<b class="fc"><i>33</i>&nbsp;    public User(Long id) {</b>
+<b class="fc"><i>34</i>&nbsp;        this.setId(id);</b>
+<i>35</i>&nbsp;    }
+<i>36</i>&nbsp;
+<i>37</i>&nbsp;    /**
+<i>38</i>&nbsp;     * Returns the username.
+<i>39</i>&nbsp;     *
+<i>40</i>&nbsp;     * @return
+<i>41</i>&nbsp;     */
+<i>42</i>&nbsp;    public String getUsername() {
+<i>43</i>&nbsp;
+<i>44</i>&nbsp;        return username;
+<i>45</i>&nbsp;    }
+<i>46</i>&nbsp;
+<i>47</i>&nbsp;    /**
+<i>48</i>&nbsp;     * @param username the username to set
+<i>49</i>&nbsp;     */
+<i>50</i>&nbsp;    public void setUsername(String username) {
+<b class="fc"><i>51</i>&nbsp;        this.username = username;</b>
+<i>52</i>&nbsp;    }
+<i>53</i>&nbsp;
+<i>54</i>&nbsp;    /**
+<i>55</i>&nbsp;     * @return the firstname
+<i>56</i>&nbsp;     */
+<i>57</i>&nbsp;    public String getFirstname() {
+<i>58</i>&nbsp;        return firstname;
+<i>59</i>&nbsp;    }
+<i>60</i>&nbsp;
+<i>61</i>&nbsp;    /**
+<i>62</i>&nbsp;     * @param firstname the firstname to set
+<i>63</i>&nbsp;     */
+<i>64</i>&nbsp;    public void setFirstname(String firstname) {
+<b class="nc"><i>65</i>&nbsp;        this.firstname = firstname;</b>
+<i>66</i>&nbsp;    }
+<i>67</i>&nbsp;
+<i>68</i>&nbsp;    /**
+<i>69</i>&nbsp;     * @return the lastname
+<i>70</i>&nbsp;     */
+<i>71</i>&nbsp;    public String getLastname() {
+<i>72</i>&nbsp;        return lastname;
+<i>73</i>&nbsp;    }
+<i>74</i>&nbsp;
+<i>75</i>&nbsp;    /**
+<i>76</i>&nbsp;     * @param lastname the lastname to set
+<i>77</i>&nbsp;     */
+<i>78</i>&nbsp;    public void setLastname(String lastname) {
+<b class="fc"><i>79</i>&nbsp;        this.lastname = lastname;</b>
+<i>80</i>&nbsp;    }
+<i>81</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2013-02-11 16:53</div>
+</div>
+</body>
+</html>
